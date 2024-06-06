@@ -1,3 +1,4 @@
 # ihome.is-best.net
 This is just a big school project, and not a real product marketing site.
-GIB ES NICHT ALS DEIN EIGENES PROJEKT AN
+DO NOT SAY IT IS YOURS!
+You can also find all this in http://ihome.is-best.net
