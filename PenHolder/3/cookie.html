@@ -1,0 +1,137 @@
+<html>
+    <html style="user-select: none;" oncontextmenu="return false">
+    <title>
+        Can we use cookies?
+    </title>
+    <link rel="stylesheet" href="https://egkoppel.github.io/product-sans/google-fonts.css">
+    <link href="https://fonts.cdnfonts.com/css/product-sans" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Honk&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script>
+        function isMobile(){
+            return navigator.userAgent.match(/(iPhone|iPod|iPad|blackberry|android|Kindle|htc|lg|midp|mmp|mobile|nokia|opera mini|palm|pocket|psp|sgh|smartphone|symbian|treo mini|Playstation Portable|SonyEricsson|Samsung|MobileExplorer|PalmSource|Benq|Windows Phone|Windows Mobile|IEMobile|Windows CE|Nintendo Wii)/i);
+        }
+        </script>
+    <body>
+        <div id="outer" style="transition: 500ms;">
+            <div style="transition: 250ms;opacity: 1;" id="trans">
+            <span id="titel">
+                Can we use &ThinSpace;
+                <span style="background-image:linear-gradient(90deg,rgb(174, 0, 255),rgb(255, 0, 144));-webkit-background-clip: text;-webkit-text-fill-color: transparent;">
+                    Cookies
+                </span>
+                ?
+                </span>
+                <div style="width: 100%;display: flex;justify-content: center;align-items: center">
+                    <div class="ec" style="width: 90%;transition: 0.2s;" onclick="alr()" oncontextmenu="alr()" id="yes">
+                        Yes
+                    </div>
+                    </div>
+            <div style="width: 100%;display: flex;justify-content: center;align-items: center" oncontextmenu="localStorage.clear();location.href = location.pathname">
+                <div class="ec" style="width: 90%;transition: 0.2s;cursor:unset;" onclick="localStorage.clear();" id="no">
+                    No
+                </div>
+                </div>
+        </div>
+        <div id="second_trans" style="transition: 250ms;opacity: 0;display: none;height: 100%;width: 100%;">
+            <span id="titel_" style="font-size: 22px;width: 100%;display: none;">
+                Error!
+            </span>
+            <span id="titel__" style="font-size: 27px;width: 100%;height: 100%;display: flex;justify-content: center;align-items: center">
+                There went sth wrong!
+            </span>
+        </div>
+        <script>
+            function alr () {
+                document.getElementById('trans').style.opacity = '0';
+                setTimeout(function(){
+                    document.getElementById('trans').style.display = 'none';
+                    document.getElementById('outer').style.height = '75px';
+                    document.getElementById('outer').style.width = '700px';
+                    document.getElementById('second_trans').style.display = 'block';
+                    document.getElementById('titel_').innerHTML = 'Thank you!'
+                    document.getElementById('titel__').innerHTML = 'We are now going to connect you with our main page.'
+                    setTimeout(function(){
+                        document.getElementById('second_trans').style.opacity = '1';
+                        setTimeout(function(){
+                            setTimeout(function(){
+                                localStorage.setItem('cookiesok','1');
+                            },4500)
+                        },3000)
+                    },500)
+                },251)
+            }
+        </script>
+        <script>
+            if(isMobile()){
+                document.getElementById('titel').style.fontSize = '30px';
+                document.getElementById('outer').style.height = '180px';
+            }
+            setInterval(function(){
+                if(localStorage.getItem('cookiesok') == 1){
+                    localStorage.setItem('sec','-1')
+                    location.href = 'index.html'
+                } else {
+                    localStorage.clear()
+                }
+            },2000)
+        </script>
+        <style>
+            @import url('https://fonts.cdnfonts.com/css/product-sans');
+            body{
+                background-color: rgb(232, 232, 232);
+                margin: 0;
+                padding: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            #outer {
+                background-color: white;
+                height: 200px;
+                width: 500px;
+                border-radius: 50px;
+                padding: 15px;
+                font-family: 'Product Sans','Calibri',sans-serif;
+                box-shadow: 0px 0px 50px 1px gray;
+            }
+            #titel,#titel_,#titel__ {
+                font-size: 50px;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .ec {
+                margin-top: 15px;
+                height: 40px;
+                width: 20%;
+                margin-left: 2.5%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border: rgba(200,200,200,0.8) 2px solid;
+                cursor: pointer;
+                font-size: 30px;
+                border-radius: 15px;
+                background: rgba(200,200,200,0);
+            }
+            .ec:hover{
+                background: rgb(174, 0, 255,0.7);
+            }
+            #yes {
+                transition: 200ms;
+            }
+            #no {
+                opacity: 1;
+                transition: 0;
+            }
+            #no:hover {
+                opacity: 0;
+                background: transparent;
+            }
+        </style>
+    </body>
+</html>
