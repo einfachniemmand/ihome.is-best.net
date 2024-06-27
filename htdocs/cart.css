@@ -1,0 +1,362 @@
+ #coupon_ersatz{
+            height: 20px;
+            width: 100%;
+            display: block;
+        }
+        #credits {
+            font-size: 20px;
+        }
+        #credits_eu {
+            font-size: 40px;
+        }
+        #credits_div {
+            width: 70%;
+            height: 100px;
+            background: rgba(195, 195, 195, 0.1);
+            border-radius: 25px;
+            padding: 25px;
+            margin-top: 25px;
+            margin-bottom: 25px;
+            transition: 200ms;
+        }
+        #credits_div:hover {
+            background: rgba(195, 195, 195, 0.3);
+        }
+        .fett {
+            font-weight: 700;
+        }
+        #off_coupon {
+            font-size: 20px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #buy_img {
+            width: 75%;
+        }
+        #buy_ok,#buy_method,#waiting,#waiting_{
+            font-size: 30px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #end_price,#abort,#abort_,#endend_price,#add  {
+            font-size: 20px;
+            display: flex;
+            width: 80%;
+            height: 30px;
+            background: rgba(174, 0, 255, 0.1);
+            border-radius: 10px;
+            font-size: 20px;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-weight: 400;
+            border: rgba(255, 255, 255, 0.5) 1.5px solid;
+            transition: 200ms;
+            font-weight: 700;
+            margin-top: 5px;
+        }
+        #end_price:hover,#endend_price:hover {
+            background: rgba(174, 0, 255, 1);
+        }
+        #abort:hover,#abort_:hover,#add:hover {
+            background: rgb(200, 200, 200);
+        }
+        #buy_blur {
+            height: 100%;
+            width: 100%;
+            z-index: 3;
+            position: fixed;
+            top: 0;
+            left: 0;
+        }
+        #buy_menu {
+            background: white;
+            opacity: 0.7;
+            box-shadow: 0px 0px 50px 1px gray;
+            height: 400px;
+            width: 600px;
+            filter: blur(0);
+            border-radius: 15px;
+            padding: 15px;
+        }
+        #buy_now_outer {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background: transparent;
+            opacity: 1;
+            z-index: 10;
+            display: none;
+            padding: 0;
+            justify-content: center;
+            align-items: center;
+        }
+        #couponcode {
+                        margin-left: 75px;
+                        padding: 0;
+                    }
+                    #coupon_input{
+                        background-color: rgb(255,255,255,0.1);
+                        border: rgba(125, 125, 125, 0.5) 2px solid;
+                        height: 30px;
+                        font-size: 25px;
+                        border-radius: 15px;
+                        text-align: center;
+                        font-family: 'Product Sans','Calibri',sans-serif;
+                        font-weight: 600;
+                        padding-left: 10px;
+                        padding-right: 10px;
+                        width: 100%;
+                        border-bottom-left-radius: 0;
+                    }
+                    #coupon_input::placeholder{
+                        color: rgb(191, 191, 191);
+                    }
+                    #coupon_div {
+                        width: 200px;
+                        font-size: 25px;
+                        margin: 0;
+                        border: rgba(125, 125, 125, 0.5) 2px solid;
+                        background-color: rgba(174, 0, 255,0.2);
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        cursor: pointer;
+                        border-radius: 15px;
+                        border-top-left-radius: 0;
+                        border-top-right-radius: 0;
+                        border-top: 0;
+                        transition: 250ms;
+                    }
+                    #coupon_div:hover {
+                        background-color: rgba(174, 0, 255,0.8);
+                    }
+                    input:checked {
+                        background-color: rgb(174, 0, 255);
+                    }
+                    input[type=checkbox] {
+                        background-color: rgb(174, 0, 255);
+                        height: 20px;
+                        width: 20px;
+                        margin: 0;
+                        padding: 0;
+                    }
+                    #buy_b {
+                        display: flex;
+                        width: 80%;
+                        height: 30px;
+                        background: rgba(174, 0, 255,0.1);
+                        border-radius: 10px;
+                        margin-top: 20px;
+                        font-size: 20px;
+                        align-items: center;
+                        justify-content: center;
+                        cursor: pointer;
+                        font-weight: 400;
+                        border: rgba(255, 255, 255, 0.5) 1.5px solid;
+                        transition: 200ms;
+                    }
+                    #buy_b:hover {
+                        background: rgba(174, 0, 255,0.9);
+                    }
+                    #buy_outer {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        width: 100%;
+                        margin-left: 25px;
+                    }
+                    .row {
+                        margin-left: 20px;
+                        width: 150px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                    }
+                    .number_field {
+                        margin: 5px;
+                        width: 30px;
+                        height: 30px;
+                        border-radius: 30px;
+                        border: none;
+                        font-weight: 700;
+                        font-size: 20px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        text-align: center;
+                        background: white;
+                        font-family: 'Product Sans','Calibri',sans-serif;
+                    }
+                    input[type=text] {
+                font-family: 'honk','Product Sans','Calibri',sans-serif;
+                width: 200px;
+                background: rgba(255, 255, 255, 0.5);
+                margin: 20px;
+                margin-top: 5px;
+                margin-right: 75px;
+                border: rgb(150, 150, 150);
+                font-size: 30px;
+                border-radius: 10px;
+                padding-left: 15px;
+            }
+            input::placeholder {
+                font-family: 'Product Sans','Calibri',sans-serif;
+                color: rgb(200, 200, 200);
+                font-size: 20px;
+                transition: 200ms;
+                font-weight: 500;
+            }
+            input[type=number] {
+                appearance: textfield;
+            }
+
+            input[type=number]::-webkit-inner-spin-button,
+            input[type=number]::-webkit-outer-spin-button {
+                appearance: none;
+                margin: 0;
+            }
+            .color_choose {
+                cursor: pointer;
+                width: 25px;
+                height: 25px;
+                border: 2px rgb(174, 174, 174) solid;
+                margin: 15px;
+                border-radius: 35px;
+                background-color: white;
+                margin-right: 0;
+                margin-top: 5px;
+                float: left;
+            }
+            #color_outer,.outer {
+                margin-left: 50px;
+            }
+            #countdown {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            #titel__ {
+                width: 100%;
+                justify-content: center;
+                align-items: center;
+                display: flex;
+                font-family: 'Product Sans','Calibri',sans-serif;
+            }
+            
+            .titel__ {
+                width: 100%;
+                justify-content: center;
+                align-items: center;
+                display: flex;
+            }
+            #details {
+                padding: 40px;
+                position: fixed;
+                top: 0;
+                right: 0;
+                height: 100%;
+                width: 30%;
+                float: left;
+                font-family: 'Product Sans','Calibri',sans-serif;
+                font-size: 50px
+            }
+            body {
+                font-family: 'Product Sans','Calibri',sans-serif;
+            }
+            @import url('https://fonts.cdnfonts.com/css/product-sans');
+            #vorschau {
+                border-radius: 50px;
+                height: 100%;
+                width: 100%;
+                border: none;
+                transition: 200ms;
+            }
+            #vorschau_inner {
+                height: 100%;
+            }
+            #vorschau_outer {
+                padding: 40px;
+                position: fixed;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 50%;
+                float: left;
+            }
+            #vorschau_img {
+                position: relative;
+                top: -20%;
+                left: -90%;
+                filter: brightness(1.4);
+            }
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: none; 
+  border-radius: 10px;
+}
+ 
+::-webkit-scrollbar-thumb {
+  background: rgba(125, 125, 125, 0.5); 
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(125, 125, 125, 0.5); 
+}
+#nav_bar {
+                position: fixed;
+                top: 0;
+                left: 0;
+                display: flex;
+                align-items: center;
+                width: 100%;
+                height: 60px;
+                opacity: 0.9;
+                background-color: white;
+                z-index: 10;
+                transition: 900ms;
+            }
+            #nav_buy {
+                margin-left: 100px;
+                height: 30px;
+                width: 150px;
+                font-size: 20px;
+                cursor: pointer;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-weight: 700;
+                border-radius: 5px;
+                transition: 500ms;
+                background: rgb(174, 0, 255);
+            }
+            #license{
+                position: fixed;
+                z-index: 11;
+                left: 0;
+                bottom: -140px;
+                width: 100%;
+                height: 150px;
+                border: none;
+                transition: 1s;
+                right: 0;
+                border-radius: 0px;
+                border-bottom-left-radius: 0;
+                border-bottom-right-radius: 0;
+            }
+            #license:hover {
+                bottom: 0;
+                border-radius: 15px;
+                border-bottom-left-radius: 0;
+                border-bottom-right-radius: 0;
+            }

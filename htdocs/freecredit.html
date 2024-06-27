@@ -1,0 +1,83 @@
+<html oncontextmenu="window.open('https://olli-games.itch.io/chips','Redirecting...');return false" style="user-select:none;">
+    <head>
+        <title>
+            Advertising
+        </title>
+        <link rel="icon" href="PenHolder/3/icons/cicon.png">
+    </head>
+    <body style="display:none;margin:0;padding:0" id="body">
+        <div class="outer" onclick="window.open('https://olli-games.itch.io/chips','Redirecting...')">
+            <video src='videos/ad.mp4' id="video" onended="localStorage.setItem('watchad','3');document.getElementById('body').style.display='none';window.close();">Ooops! That's an error. (Code 502)</video>
+        </div>
+        <div id="clickhere" onclick="playad();">
+            <img src="https://cdn-icons-png.flaticon.com/512/3567/3567870.png" id="button">
+        </div>
+        <style>
+            #button {
+                width:25%;
+                transition:500ms;
+                filter: grayscale(50%);
+            }
+            #button:hover {
+                filter:grayscale(0%);
+            }
+            #clickhere {
+                height:100%;
+                width:100%;
+                z-index:3;
+                position:fixed;
+                top:0;
+                left:0;
+                cursor:pointer;
+                display:flex;
+                justify-content:center;
+                align-items:center;
+                background:rgba(0,0,0,0.3);
+            }
+            .outer {
+                cursor:pointer;
+                height: 100%;
+                width:100%;
+                display:flex;
+                justify-content:center;
+                align-items:center;
+            }
+            video {
+                height:100%
+            }
+        </style>
+        <script>
+            function playad () {
+                document.getElementById('video').play();
+                document.getElementById('clickhere').style.display = 'none';
+                localStorage.setItem('watchad','2');
+            }
+            setInterval(function(){
+                if(window.innerHeight > window.innerWidth){
+                    document.getElementById('video').style.width = window.innerWidth+'px'
+                    document.getElementById('button').style.width = '25%';
+                    document.getElementById('button').style.height = 'unset';
+                } else {
+                    document.getElementById('video').style.height = window.innerHeight+'px'
+                    document.getElementById('button').style.height = '25%';
+                    document.getElementById('button').style.width = 'unset';
+                }
+            },10)
+            onload = function () {
+                document.getElementById('body').style.display = 'block'
+                    if(localStorage.getItem('watchad') == '1'){
+                        localStorage.setItem('watchad','2');
+                        setInterval(function(){
+                            if(localStorage.getItem('watchad') == '0'){
+                                document.getElementById('body').innerHTML = 'Error 503<br>Vorbidden. Try close the site and open again.';
+                                window.close();
+                            }
+                        },10)
+                    } else {
+                        document.getElementById('body').innerHTML = 'Error 503<br>Vorbidden. Try close the site and open again.';
+                        window.close()
+                    }
+            }
+        </script>
+    </body>
+    </html>

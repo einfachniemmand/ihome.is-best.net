@@ -1,0 +1,94 @@
+<html style="user-select: none;overflow-y:hidden;" oncontextmenu="return false">
+    <head>
+        <title>
+            Countdown for Special offer
+        </title>
+        <link rel="icon" href="icons/cicon.png">
+        <link rel="stylesheet" href="https://egkoppel.github.io/product-sans/google-fonts.css">
+        <link href="https://fonts.cdnfonts.com/css/product-sans" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <script>
+            function isMobile(){
+                return navigator.userAgent.match(/(iPhone|iPod|iPad|blackberry|android|Kindle|htc|lg|midp|mmp|mobile|nokia|opera mini|palm|pocket|psp|sgh|smartphone|symbian|treo mini|Playstation Portable|SonyEricsson|Samsung|MobileExplorer|PalmSource|Benq|Windows Phone|Windows Mobile|IEMobile|Windows CE|Nintendo Wii)/i);
+            }
+        </script>
+    </head>
+    <body>
+        <span id="time">
+            12:01:00
+        </span>
+    <script>
+        setInterval(function(){
+            if(isMobile()){
+                document.getElementById('time').style.fontSize = '70px';
+                document.getElementById('time').style.fontWeight = '700';
+            }else{
+                document.getElementById('time').style.fontSize = window.innerHeight-15+'px';
+                location.href = '#';
+            }
+        },0)
+        if(localStorage.getItem('excep') == '1'){
+            localStorage.setItem('excep','0')
+        var seconds = 0;
+        var minuten = '1';
+        var stunden = '12';
+        setInterval(function(){
+            if(seconds == 0){
+                seconds = 60;
+                if(minuten == 0){
+                    minuten = 60;
+                    if(stunden == 0){
+                        localStorage.setItem('soffer','1')
+                        setInterval(function(){
+                            document.getElementById('time').innerHTML = 'Redeem'
+                            document.getElementById('time').style.cursor = 'pointer'
+                            document.getElementById('time').onclick = "window.open('cart.html','special_offer','height=1000000,width=1000000')"
+                            window.open('cart.html','special_offer','height=1000000,width=1000000')
+                            if(localStorage.getItem('soffer') == '0'){
+                                window.close();
+                            }
+                        },1)
+                    }
+                    stunden--;
+            if(stunden < 10){
+                stunden = '0' + stunden; 
+            }
+                }
+                minuten--;
+            if(minuten < 10){
+                minuten = '0' + minuten; 
+            }
+            }
+            seconds--;
+            if(seconds < 10){
+                seconds = '0' + seconds; 
+            }
+            document.getElementById('time').innerHTML = stunden+':'+minuten+':'+seconds;
+        },999)
+        } else {
+            document.getElementById('time').innerHTML = 'Error 503<br>Forbidden'
+            window.close()
+        }
+    </script>
+        <style>
+            @import url('https://fonts.cdnfonts.com/css/product-sans');
+            body {
+                font-family: 'Product Sans','Calibri','sans-serif';
+                font-size: 75px;
+                margin: 0;
+                padding: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                height: 100%;
+            }
+            span {
+                padding: 0;
+                margin: 0;
+            }
+            #hrs,#sec {
+            }
+        </style>
+    </body>
+</html>

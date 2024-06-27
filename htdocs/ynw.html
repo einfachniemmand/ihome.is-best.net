@@ -1,0 +1,238 @@
+<html style="user-select: none;" oncontextmenu="return false">
+    <title>
+        Add credits to your iHome account
+    </title>
+    <link rel="icon" href="icon/credits.png">
+    <link rel="stylesheet" href="https://egkoppel.github.io/product-sans/google-fonts.css">
+    <link href="https://fonts.cdnfonts.com/css/product-sans" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Honk&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script>
+        function isMobile(){
+            return navigator.userAgent.match(/(iPhone|iPod|iPad|blackberry|android|Kindle|htc|lg|midp|mmp|mobile|nokia|opera mini|palm|pocket|psp|sgh|smartphone|symbian|treo mini|Playstation Portable|SonyEricsson|Samsung|MobileExplorer|PalmSource|Benq|Windows Phone|Windows Mobile|IEMobile|Windows CE|Nintendo Wii)/i);
+        }
+        </script>
+    <body>
+        <div id="outer" style="transition: 500ms;">
+            <div style="transition: 250ms;opacity: 1;" id="trans">
+            <span id="titel">
+                <span id="your">
+                    Your &ThinSpace;
+                </span>
+                <span id="cre" style="background-image:linear-gradient(90deg,rgb(174, 0, 255),rgb(255, 0, 144));-webkit-background-clip: text;-webkit-text-fill-color: transparent;">
+                    Credits
+                </span>
+            </span>
+            <div style="width: 100%;display: flex;justify-content: center;align-items: center" id="pc_v">
+                <div class="ec" onclick="add(2);">
+                    2&euro;
+                </div>
+                <div class="ec" onclick="add(5);">
+                    5&euro;
+                </div>
+                <div class="ec" onclick="add(10);">
+                    10&euro;
+                </div>
+                <div class="ec" onclick="add(20);">
+                    20&euro;
+                </div>
+            </div>
+            <div id="mobfirst" style="width: 100%;display: none;justify-content: center;align-items: center">
+                <div class="ec" onclick="add(2);" style="margin-bottom: 5px;width: 45%;">
+                    2&euro;
+                </div>
+                <div class="ec" onclick="add(5);" style="margin-bottom: 5px;width: 45%;">
+                    5&euro;
+                </div>
+                </div>
+                <div id="mobsecond" style="margin-top:5px;width: 100%;display: none;justify-content: center;align-items: center;">
+                <div class="ec" onclick="add(10);" style="margin-top: 5px;width: 45%;">
+                    10&euro;
+                </div>
+                <div class="ec" onclick="add(20);" style="margin-top: 5px;width: 45%;">
+                    20&euro;
+                </div>
+                </div><div style="width: 100%;display: flex;justify-content: center;align-items: center">
+                <div class="ec" style="width: 90%;" onclick="adver()">
+                    Get free Credits
+                </div>
+                </div>
+                <div style="width:100%;height:15px"></div>
+            <div style="width: 100%;display: flex;justify-content: center;align-items: center">
+                <div class="ec" style="width: 90%;" onclick="dele();" id="del">
+                    Delete your account
+                </div>
+                </div>
+            <div style="width: 100%;display: flex;justify-content: center;align-items: center">
+            <div class="ec" style="width: 90%;" onclick="window.close()">
+                Cancel
+            </div>
+            </div>
+            </div>
+            <div id="second_trans" style="transition: 250ms;opacity: 0;display: none">
+                <span id="titel_" style="font-size: 22px;height: 100%">
+                    Error!
+                </span>
+            </div>
+            </div>
+        </div>
+        <script>
+            function adver () {
+                localStorage.setItem('watchad','1')
+                window.open('freecredit.html','loading','width=270,height=480')
+                setTimeout(function(){
+                    document.getElementById('trans').style.display = 'none';
+                    document.getElementById('outer').style.height = '75px';
+                    document.getElementById('second_trans').style.display = 'block';
+                    document.getElementById('titel_').innerHTML = "This window needs to be opened while watching!"
+                    setTimeout(function(){
+                        document.getElementById('second_trans').style.opacity = '1';
+                            setInterval(function(){
+                                if(localStorage.getItem('watchad') == '0'){
+                                    window.close()
+                                }
+                                if(localStorage.getItem('watchad') == '3'){
+                                    document.getElementById('titel_').innerHTML = '2&euro; will be added to your credits!'
+                                    var vh = localStorage.getItem('credits');
+                                    vh = 2 + parseInt(vh);
+                                    if(vh < 1000){
+                                    } else {
+                                        vh = 1000;
+                                    }
+                                    setTimeout(function(){
+                                        localStorage.setItem('credits',vh)
+                                    },1800)
+                                    setTimeout(function(){
+                                        localStorage.setItem('watchad','0')
+                                        window.close();
+                                    },4000)
+                                }
+                            },50)
+                            setTimeout(function(){
+                                localStorage.setItem('watchad','0');
+                                window.close()
+                            },1800000)
+                    },500)
+                },251)
+            }
+            function dele () {
+                document.getElementById('trans').style.opacity = '0';
+                setTimeout(function(){
+                    document.getElementById('trans').style.display = 'none';
+                    document.getElementById('outer').style.height = '75px';
+                    document.getElementById('second_trans').style.display = 'block';
+                    document.getElementById('titel_').innerHTML = 'Deleting your account...'
+                    setTimeout(function(){
+                        document.getElementById('second_trans').style.opacity = '1';
+                        setTimeout(function(){
+                            localStorage.setItem('credits','0')
+                            localStorage.setItem('reload','1')
+                            setTimeout(function(){
+                                window.close();
+                            },1000)
+                        },3000)
+                    },500)
+                },251)
+            }
+            function add (anz) {
+                document.getElementById('trans').style.opacity = '0';
+                setTimeout(function(){
+                    document.getElementById('trans').style.display = 'none';
+                    document.getElementById('outer').style.height = '75px';
+                    document.getElementById('second_trans').style.display = 'block';
+                    document.getElementById('titel_').innerHTML = anz + '&euro; will be added to your credits!'
+                    setTimeout(function(){
+                        document.getElementById('second_trans').style.opacity = '1';
+                        setTimeout(function(){
+                            var vorher = localStorage.getItem('credits');
+                            var vorher = parseInt(vorher) + parseInt(anz);
+                            if(vorher < 1000){
+                            } else {
+                                vorher = 1000;
+                            }
+                            localStorage.setItem('credits',vorher)
+                            setTimeout(function(){
+                                window.close();
+                            },2000)
+                        },3000)
+                    },500)
+                },251)
+            }
+        </script>
+        <style>
+            @import url('https://fonts.cdnfonts.com/css/product-sans');
+            body{
+                background-color: rgb(232, 232, 232);
+                margin: 0;
+                padding: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            #outer {
+                background-color: rgb(216, 216, 216);
+                height: 350px;
+                width: 80%;
+                border-radius: 50px;
+                padding: 15px;
+                font-family: 'Product Sans','Calibri',sans-serif;
+            }
+            #titel,#titel_ {
+                font-size: 50px;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .ec {
+                margin-top: 15px;
+                height: 40px;
+                width: 20%;
+                margin-left: 2.5%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border: rgba(200,200,200,0.8) 2px solid;
+                cursor: pointer;
+                font-size: 30px;
+                border-radius: 15px;
+                background: rgba(200,200,200,0.5);
+                transition: 200ms;
+            }
+            .ec:hover{
+                background: rgb(174, 0, 255,0.7);
+            }
+        </style>
+        <script>
+        var h = window.innerHeight;
+        var w = window.innerWidth;
+        setInterval(function(){
+            if(window.innerHeight == h){
+            } else {
+                window.close();
+            }
+            if(window.innerWidth == w){} else {
+                window.close();
+            }
+        },100)
+    </script>
+    <script>
+        if(isMobile()){
+            document.getElementById('outer').style.height = '400px'
+            document.getElementById('del').style.fontSize = '27px'
+            document.getElementById('outer').style.width = '99%'
+        }
+        setInterval(function(){
+            if(isMobile()){
+                document.getElementById('your').style.display = 'none'
+                document.getElementById('cre').style.fontWeight = '500'
+                document.getElementById('mobfirst').style.display = 'flex'
+                document.getElementById('mobsecond').style.display = 'flex'
+                document.getElementById('pc_v').style.display = 'none'
+            }
+        },100)
+    </script>
+    </body>
+</html>

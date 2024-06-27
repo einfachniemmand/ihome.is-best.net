@@ -1,0 +1,182 @@
+<html style="user-select: none;"oncontextmenu='return false' lang="de">
+    <head>
+        <title>
+            Buy Cable Organizer 2.0
+        </title>
+        <link rel="icon" href="icons/logo.png">
+        <link rel="stylesheet" href="https://egkoppel.github.io/product-sans/google-fonts.css">
+        <link href="https://fonts.cdnfonts.com/css/product-sans" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Honk&display=swap" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="/cart.css">
+    </head>
+    <body style="max-height: 100%;margin: 0;padding: 0;width: 100%;transition: 750ms;" id="body">
+        <img draggable="false" src="icons/correct_logo.png" style="position: fixed;height: 50px;width: 50px;top: 15px;right: 15px;z-index:90;opacity:0.95;transition: 750ms;border-radius: 10px;" id='logo'>
+        <div id="buy_now_outer">
+        <div id="buy_menu" style="transition: 500ms;">
+            <div id="buy_first" style="opacity:1;transition: 250ms;">
+            <span id="buy_ok">
+                <span style="background-image:linear-gradient(90deg,rgb(174, 0, 255),rgb(255, 0, 144));-webkit-background-clip: text;-webkit-text-fill-color: transparent;">
+                    Buy&ThinSpace;
+                </span>
+                Cable Organizer 2.0&ThinSpace;
+            </span>
+            <br>
+            <div style="width: 100%;display: flex;justify-content: center;align-items: center;">
+                <img id="buy_img" style="filter:brightness(1.5)" draggable="false">
+            </div>
+            <div style="width: 100%;display: flex;justify-content: center;align-items: center;">
+                <div id="end_price" onclick="first_next();">0&euro;</div>
+                </div>
+                <div style="width: 100%;display: flex;justify-content: center;align-items: center;">
+                    <div id="abort" onclick="cancel()">Cancel</div>
+                    </div>
+        </div>
+        <div id="buy_second" style="opacity:0;display:none;transition: 250ms;">
+            <span id="buy_method">
+                <span style="background-image:linear-gradient(90deg,rgb(174, 0, 255),rgb(255, 0, 144));-webkit-background-clip: text;-webkit-text-fill-color: transparent;">
+                    Choose&ThinSpace;
+                </span>
+                a payment method&ThinSpace;
+            </span>
+            <div id="off_coupon_outer" style="display: none;">
+                <span id="off_coupon">
+                    Oops! That's an error.
+                </span>
+            </div>
+            <div id="coupon_ersatz"></div>
+            <div style="width: 100%;display: flex;justify-content: center;align-items: center;">
+            <div id="credits_div">
+            <div style="width: 100%;display: flex;justify-content: center;align-items: center;">
+                <span id="credits">iHouse Credits</span>
+                </div>
+                <div style="width: 100%;display: flex;justify-content: center;align-items: center;">
+                <span id="credits_eu">0.00&ThinSpace;&euro;</span>
+                </div>
+                <div style="width: 100%;display: flex;justify-content: center;align-items: center;">
+                    <div id="add" style="background:rgba(195, 195, 195, 0);border:none;height: 20px;margin:0;font-size: 20px;" onclick="addcredits(this);">Add credits</div>
+                    </div>
+            </div>
+            </div>
+            <div style="height: 50px;width: 100%;"></div>
+            <div style="width: 100%;display: flex;justify-content: center;align-items: center;">
+                <div id="endend_price" onclick="second_next();">0&euro;</div>
+                </div>
+                <div style="width: 100%;display: flex;justify-content: center;align-items: center;">
+                    <div id="abort_" onclick="cancel();setTimeout(function(){location.reload()},750)">Cancel</div>
+                    </div>
+            </div>
+            <div id="buy_third" style="opacity: 0;display: none;transition: 250ms;padding: 25px;justify-content: center;align-items: center;">
+                <span id="waiting">
+                    Your order is being processed: Please stay on this website for a moment.
+                </span>
+            </div>
+            <div id="buy_last" style="opacity: 0;display: none;transition: 250ms;padding: 25px;justify-content: center;align-items: center;">
+                <span id="waiting_" onclick="localStorage.setItem('excep','1');window.open('coupon_countdown.html','','height=100,width=500');window.close();location.href = 'index.html'" style="cursor: pointer;">
+                    Your order has been placed. You can now close this page&ThinSpace;or click here for a special offer.
+                    </span>
+            </div>
+        </div>
+    </div>
+    <div id="buy_blur" style="transition: 750ms;">
+        <div id="nav_bar">
+            <div style="width: 3%;"></div>
+            <img src="icons/home.png" draggable="false" style="height: 20px;cursor: pointer;" onclick="location.href = 'index.html'">
+            <span class="titel__" style="font-size: 30px;width:unset;">&ensp;&ensp;Cable Organizer&ThinSpace;<span style="font-weight:500;background-image:linear-gradient(90deg,rgb(174, 0, 255),rgb(255, 0, 144));-webkit-background-clip: text;-webkit-text-fill-color: transparent;">2.0</span></span>
+            <div id="nav_buy" style="transition: 900ms;opacity: 1;" onclick="buy_select()">Buy</div>
+        </div>
+        <div id="bg" style="position: fixed;top: 0;left: 0;opacity: 0.8;height: 100%;width: 100%;transition: 500ms;">
+        </div>
+        <div id="vorschau_outer">
+        <div style="width: 100%;height: 25px;"></div>
+            <div id="vorschau">
+                <div id="vorschau_inner">
+                <img src="images/white.png" id="vorschau_img" draggable="false">   
+                </div>        
+            </div>
+            <div id="details">
+                <div style="width: 100%;height: 30px;"></div>
+                <span id="titel__"><span style="font-weight:500;background-image:linear-gradient(90deg,rgb(174, 0, 255),rgb(255, 0, 144));-webkit-background-clip: text;-webkit-text-fill-color: transparent;">Buy&ThinSpace;</span> Cable Organizer 2.0</span>
+                <div style="display: flex;width: 100%;justify-content: center;align-items: center;">
+                <span class="titel__" style="text-decoration:none;width: unset;font-size:25px;color:black;font-weight: 700;transition: 2500ms;opacity: 1;color: green;" id="price_new">
+                    <span class="titel__" style="text-decoration:none;font-size: 25px;width: unset;border-radius: 6px;color: rgb(255, 111, 111);padding: 0;text-decoration: line-through;">
+                        <span id="old__price">19&euro;</span>
+                    </span>
+                    <span id="price_">&ensp;7 &euro;&ensp;</span>
+                    <span class="titel__" id="countdown" style="text-decoration:none;font-size: 25px;background: rgb(255, 160, 160);width: unset;border-radius: 6px;color: black;padding: 0;width: 125px;float: right;">0</span>
+                </div>
+                <br>
+                <div style="overflow-y:scroll;" id="scrolld">
+                <div id="color_outer">
+                    <span style="font-size: 25px;width: unset;display: block;padding-left: 15px;" class="titel__">Color</span>
+                    <div class="color_choose" style="background-color: rgb(230, 230, 230);" onclick="localStorage.setItem('chose','1')"></div>
+                    <div class="color_choose" style="background-color: rgb(254, 150, 140);" onclick="localStorage.setItem('chose','2')"></div>
+                    <div class="color_choose" style="background-color: rgb(210, 205, 151);display:none" onclick="localStorage.setItem('chose','3')"></div>
+                    <div class="color_choose" style="background-color: rgb(177, 247, 70);" onclick="localStorage.setItem('chose','4')"></div>
+                    <div class="color_choose" style="background-color: rgb(104, 139, 255);" onclick="localStorage.setItem('chose','5')"></div>
+                    <div class="color_choose" style="background-color: rgb(255, 130, 254);" onclick="localStorage.setItem('chose','6')"></div>
+                </div>
+                <br>
+                <div class="outer">
+                    <span style="font-size: 25px;width: unset;display: block;padding-left: 15px;" class="titel__">Embossing</span>
+                    <input type="text" maxlength="8" placeholder="Line 1" value style="border-bottom-left-radius: 0;border-bottom-right-radius: 0;margin-bottom:0;">
+                    <div style="width: 100%;height: 0;"></div>
+                    <input type="text" maxlength="8" placeholder="Line 2" value style="border-top-left-radius: 0;border-top-right-radius: 0;margin-top:0;">
+                </div>
+                <div class="outer">
+                    <span style="font-size: 25px;width: unset;display: block;padding-left: 15px;" class="titel__">Mounts<span style="color: black;font-weight: 700;font-size: 18px;opacity: 0.2;">&ensp;</span><br></span>
+                    <div style="padding-left:20px;height:20px">
+                        <span id="range_o" style="font-size:25px;padding:5px;padding-bottom:10px">/</span>
+                        <script>setInterval(function(){document.getElementById('range_o').innerHTML = document.getElementById('range').value;},5)</script>
+                        <input type="range" min="2" max="9" value="5" id="range" style="height:20px;opacity:0.6">
+                    </div>
+                    <div class="row" style="display:none">
+                    <input type="number" id="1_1" class="number_field" maxlength="2" value="12" placeholder="mm">
+                    <div class="number_field" id="1_2"></div>
+                    <div class="number_field" id="1_3"></div>
+                    </div>
+                    <div class="row" style="display:none">
+                    <input type="number" id="2_1" class="number_field" maxlength="2" value="12" placeholder="mm">
+                    <div class="number_field" id="2_2"></div>
+                    <div class="number_field" id="2_3"></div>
+                    </div>
+                    <div class="row" style="display:none">
+                    <input type="number" id="3_1" class="number_field" maxlength="2" value="20" placeholder="mm">
+                    <div class="number_field" id="3_2"></div>
+                    <div class="number_field" id="3_3"></div>
+                    </div>
+                    <br>
+                </div>
+                <div class="outer">
+                    <span style="font-size: 25px;width: unset;display: block;padding-left: 15px;margin-top: 5px;" class="titel__"><input type="checkbox" style="cursor: pointer;" onchange="addpen(this);">
+                        &ensp;Add compatible USB-C Cables
+                        <span style="color: rgb(180, 180, 180);font-size: 15px;" id="penex">+ 5&euro;</span></span>
+                    </div>
+                    <div class="outer">
+                        <span style="font-size: 25px;width: unset;display: block;padding-left: 15px;margin-top: 5px;" class="titel__" id="q_coupon"><input type="checkbox" style="cursor: pointer;" onchange="coupon(this);" id="coupon_check">
+                            &ensp;Do you have a coupon?
+                        </div>
+                        <div style="margin-left: 25px;">
+                        <div class="outer" id="couponcode" style="display: none;">
+                            <input type="number" id="coupon_input" value placeholder="XXXX-XXXX-XXXX-XXXX" onkeyup="document.getElementById('coupon_div').style.backgroundColor = '';">
+                            <div id="coupon_div" onclick="checkcoupon()">Redeem</div>
+                            </div>
+                </div>
+                </div>
+                <div id="buy_outer">
+                    <div id="buy_b" onclick="onbuy();">Buy now</div>
+                    </div>
+                </div>
+                </div>
+        </div>
+        <iframe src="/license.html" id="license">
+            Oops! That's an error.
+        </iframe>
+        <style id="addcss"></style>
+        <script src="/cart.js"></script>
+        <script>var ca = 1;
+            var price = '7';</script>
+    </body>
+</html>

@@ -1,0 +1,9 @@
+User-agent: Googlebot
+Disallow: /cookie.html
+
+User-agent: *
+Allow: /
+Allow: /PenHolder/3/
+Allow: /CableOrganizer/2/
+
+Sitemap: https://ihome.is-best.net/sitemap_index.xml
