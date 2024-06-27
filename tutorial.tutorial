@@ -1,0 +1,28 @@
+TUTORIAL
+01.  Füge den SSL-Schlüssel in "google76e530f8567645d9.html" ein und gebe ihn in Google Enterprise an, um die CXP Authentication abzuschließen.
+02.  Ändere den Wert in der XMP-Map "Bing Site Auth" zu deinem Indexierungswert in Bing Console.
+03.  Passe die Site-Map für den Googleindexierungsbot nach deinen Bedürfnissen an. Mehr dazu: https://developers.google.com/search/docs/crawling-indexing/sitemaps/build-sitemap
+04.  Schreibe deine Bot-Richtlinien in "robots.txt" im "/" Verzeichnis. Mehr dazu: https://developers.google.com/search/docs/crawling-indexing/robots/create-robots-txt
+05.  Füge deine eigenen Bilder immer in den Ordnern ein, die "images" heißen. Nutze das PNG-Format.
+06.  Binde deinen Capcha unter "capcha.html" ein.
+07.  Ändere unter "/videos/" die Datei "Ad.mp4" zu deiner eigenen.
+08.  Benutze nicht unsere Logos unter "/icon", "/PenHolder/3/icon" oder "/CableOrganizer/3/icon"
+09.  Bearbeite den Text in "/index.html", "/CableOrganizer/index.html", "/CableOrganizer/2/index.html" und "/PenHolder/3/index.html". Du kannst aber auch unsere frei nutzen.
+10.  Ändere die Autoren in "/license.html"
+11.  Füge bei deinem FTP-Programm einen CNAME eintrag ein und benenne ihn nach deinem Captcha-Schlüssel
+12.  Tipp: Beantrage bei G Trust ein HTTPS:// Zertifikat.
+
+Wie stelle ich die Seite kostenlos online?
+  Ich empfehle hier:
+  https://infinityfree.com
+
+  Lade den htdocs hoch und gib deine Addresse zur Überprüfung in der Addresszeile deines Computers ein.
+
+Wie stelle ich meine Webseite auf google.com und/oder bing.com?
+  Reiche deine Seite auf der Google Search Console ein und warte 1-5 Tage, bis deine Seite indexiert wurde.
+
+Warum aktualiesiert sich meine Webseite bei meinen Änderungen nicht?
+  Lade dir die Erweiterung "Clear Cache" herrunter oder lösche jedes mal die Browsingdaten, um die Seite richtig neuzuladen.
+  Lösche deinen Cache jedes Mal, wenn du eine Änderung vorgenommen hast.
+
+Falls du etwas zu "/index.html" hinzugefügt hast, reiche deine Seite zum erneuten Crawlen bei Google ein. (Dies dauert 3-48 Stunden)
